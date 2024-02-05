@@ -73,9 +73,9 @@ createButton("X", function() {
     let confirm = prompt("Are you sure you want to reset your progress?");
     
     if (confirm.substring(0, 1) == "y") {
-        // I tried using an array but it wasn't cooperating >:/
+        // I tried replacing elements with an array but it just wasn't cooperating >:/
 
-        elements.splice(0, elements.length - 1)
+        elements.splice(0, elements.length)
         elements.push({text: "Water", emoji: "💧", discovered: false})
         elements.push({text: "Fire", emoji: "🔥", discovered: false})
         elements.push({text: "Wind", emoji: "🌬️", discovered: false})
