@@ -21,9 +21,25 @@ function createButton(disp, funct, style) {
     document.querySelector('.sidebar-controls').appendChild(addElt);
 }
 
+createButton("+", function() {
+    let element = prompt("Element Name");
+    
+    if (element != "" && element != null) {
+        let emoji = prompt("Element Emoji");
+
+        let newElement = {
+            text: element,
+            emoji: emoji,
+            discovered: false
+        };
+
+        elements.push(newElement)
+    }
+}, "")
+
 createButton("-", function() {
     let name = prompt("Element to remove");
-
+    
     if (name != "" && name != null) {
         var i = 0;
         elements.every(elem => {
@@ -39,7 +55,7 @@ createButton("-", function() {
 
 createButton("$", function() {
     let name = prompt("Element to award (or unaward) as First Discovery");
-
+    
     if (name != "" && name != null) {
         var i = 0;
         elements.every(elem => {
@@ -50,18 +66,6 @@ createButton("$", function() {
             i++;
             return true
         })
-    }
-}, "")
-
-createButton("$", function() {
-    let named = prompt("Element to award (or unaward) as First Discovery");
-    
-    if (named != "" && named != null) {
-        var elem = elements.findIndex(named)
-        
-        if (elem != -1) {
-            elem.discovered = !elem.discovered
-        }
     }
 }, "")
 
