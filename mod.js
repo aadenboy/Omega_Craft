@@ -40,32 +40,18 @@ createButton("+", function() {
 createButton("-", function() {
     let name = prompt("Element to remove");
     
-    if (name != "" && name != null) {
-        var i = 0;
-        elements.every(elem => {
-            if (elem.text == name) {
-                elements.splice(i, 1)
-                return false
-            }
-            i++;
-            return true
-        })
-    }
+    elements.splice(elements.findIndex(name), 1)
 }, "")
 
 createButton("$", function() {
     let name = prompt("Element to award (or unaward) as First Discovery");
     
     if (name != "" && name != null) {
-        var i = 0;
-        elements.every(elem => {
-            if (elem.text == name) {
-                elem.discovered = !elem.discovered;
-                return false
-            }
-            i++;
-            return true
-        })
+        var elem = elements.findIndex(name)
+        
+        if (elem != -1) {
+            elem.discovered = !elem.discovered
+        }
     }
 }, "")
 
