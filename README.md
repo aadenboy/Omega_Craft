@@ -20,3 +20,9 @@ This works on any element. Clicking the $ button will ask for the element, and t
 **Be careful, you can't undo this!**
 
 To reset all progress, click the red X button, and respond with yes. Any elements on the playing area will not automatically be removed.
+
+# Credits
+- @.sussybaka6969
+  - Created the first iteration of the mod
+- @gabeyk9
+  - Provided insight with certain features (and saving).
